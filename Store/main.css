@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 * {
-    font-family: 'Montserrat';
+    font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    text-align: center;
 }
 
 body {
     font-size: 3vh;
 }
-
 nav ul {
     list-style: none;
     display: flex;
-    background-color: #4bb7ff;
+    background-color: #003785;
     align-items: center;
     padding: 0 2vh;
 }
@@ -22,7 +20,6 @@ nav ul {
 nav ul li {
     margin: 2vh;
     font-size: large;
-    font-size: 1.3rem;
 }
 
 nav ul li a {
@@ -30,7 +27,6 @@ nav ul li a {
     text-decoration: none;
     padding: 1vh 2vh;
     display: block;
-    font-family: 'roboto';
 }
 
 nav ul li a:hover {
@@ -54,19 +50,4 @@ nav .conta li {
     left: 9vw;
     text-align: start;
     white-space: nowrap;
-}
-.produto {
-    border: 5px solid black;
-    border-radius: 20px;
-    justify-items: center;
-    min-width: 20vw;
-    max-width: 50vh;
-    min-height: 50vh;
-    margin-left: 10%;
-}
-.produto > p{
-    margin-top: 10%;
-}
-.produto button {
-    font-weight: bold;
 }
