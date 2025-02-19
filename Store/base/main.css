@@ -51,3 +51,22 @@ nav .conta li {
     text-align: start;
     white-space: nowrap;
 }
+#opcoes-acoes{
+    background-color:#2195f3f5;
+    margin: 4vh;
+    border-radius: 3vh;
+}
+#opcoes-acoes * {
+    margin: 0% 2% 0% 2%;
+    font-family: 'Montserrat';
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
+#opcoes-acoes ul li {
+    list-style-type: none;
+    margin: 2vh 2vh 2vh 2vh;
+    font-family: 'Montserrat';
+    white-space: nowrap;
+}
