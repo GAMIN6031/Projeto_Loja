@@ -1,26 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-body, html {
-    height: 100%;
-    overflow: hidden;
-    font-size: 3vh;
-}
-
-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-}
 * {
     font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-size: 3vh;
 }
 nav ul {
     list-style: none;
@@ -42,6 +29,10 @@ nav ul li a {
     display: block;
 }
 
+nav ul li a:hover {
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.562);
+}
+
 nav .conta {
     margin-left: 20vw;
     display: flex;
@@ -59,18 +50,4 @@ nav .conta li {
     left: 9vw;
     text-align: start;
     white-space: nowrap;
-}
-#info-projet{
-    background-color:#2195f3f5;
-    margin: 4vh;
-    border-radius: 3vh;
-}
-#info-projet * {
-    margin: 0% 2% 0% 2%;
-    font-family: 'Montserrat';
-    color: rgb(0, 0, 0);
-}
-#info-projet > p {
-    font-size: larger;
-    margin: 2%;
 }

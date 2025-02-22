@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de Filtro no Select</title>
+    <style>
+        .filter-container {
+            position: relative;
+            display: inline-block;
+        }
+        .filter-input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+        .filter-select {
+            width: 100%;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-container">
+        <input type="text" id="filterInput" class="filter-input" placeholder="Filtrar opções...">
+        <select id="filterSelect" class="filter-select" size="5">
+            <option value="1">Opção 1</option>
+            <option value="2">Opção 2</option>
+            <option value="3">Opção 3</option>
+            <option value="4">Opção 4</option>
+            <option value="5">Opção 5</option>
+        </select>
+    </div>
+
+    <script>
+        document.getElementById('filterInput').addEventListener('keyup', function() {
+            var filter = this.value.toUpperCase();
+            var options = document.getElementById('filterSelect').options;
+            
+            for (var i = 0; i < options.length; i++) {
+                var txtValue = options[i].textContent || options[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    options[i].style.display = "";
+                } else {
+                    options[i].style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

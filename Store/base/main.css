@@ -19,7 +19,7 @@ nav ul {
 
 nav ul li {
     margin: 2vh;
-    font-size: large;
+    font-size: 3.4vh;
 }
 
 nav ul li a {
@@ -30,9 +30,17 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.562);
+    animation: typing 2s steps(24),blink 0.4s step-end infinite alternate;
+    text-shadow: 0rem 0rem 10px rgb(255, 255, 255);
 }
-
+@keyframes typing{
+    from {
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
 nav .conta {
     margin-left: 20vw;
     display: flex;
@@ -51,8 +59,8 @@ nav .conta li {
     text-align: start;
     white-space: nowrap;
 }
-#opcoes-acoes{
-    background-color:#2195f3f5;
+#opcoes-acoes {
+    background-color: #2195f3f5;
     margin: 4vh;
     border-radius: 3vh;
 }
@@ -60,13 +68,10 @@ nav .conta li {
     margin: 0% 2% 0% 2%;
     font-family: 'Montserrat';
     color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: row;
     text-decoration: none;
 }
 #opcoes-acoes ul li {
     list-style-type: none;
     margin: 2vh 2vh 2vh 2vh;
     font-family: 'Montserrat';
-    white-space: nowrap;
 }
