@@ -11,13 +11,14 @@ body {
 }
 nav ul {
     list-style: none;
-    display: flex;
+    
     background-color: #003785;
     align-items: center;
     padding: 0 2vh;
+    display: flex;
 }
-
 nav ul li {
+    flex: 1;
     margin: 2vh;
     font-size: large;
 }
@@ -33,21 +34,18 @@ nav ul li a:hover {
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.562);
 }
 
-nav .conta {
-    margin-left: 20vw;
-    display: flex;
-    gap: 2vh;
-}
-
-nav .conta li {
-    margin: 1vw;
+.conta{
+    position: relative;
+    right: 4vw;
 }
 
 #logo {
+    font-size: 1.6vw;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
-    left: 9vw;
+    right:12vw;
     text-align: start;
     white-space: nowrap;
+    padding-left:18vw;
 }

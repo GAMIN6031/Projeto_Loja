@@ -1,10 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-body, html {
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
     height: 100%;
     overflow: hidden;
+}
+body {
     font-size: 3vh;
+    animation: wallpaper 10s infinite;
+}
+@keyframes wallpaper {
+    0% {
+        background: radial-gradient(circle, rgb(230, 230, 230) 10%, blue 50%, blue 75%);
+    }
+    20% {
+        background: radial-gradient(circle, rgb(230, 230, 230) 12%, blue 52%, blue 77%);
+    }
+    40% {
+        background: radial-gradient(circle, rgb(230, 230, 230) 15%, blue 55%, blue 80%);
+    }
+    60% {
+        background: radial-gradient(circle, rgb(230, 230, 230) 12%, blue 52%, blue 77%);
+    }
+    80% {
+        background: radial-gradient(circle, rgb(230, 230, 230) 10%, blue 50%, blue 75%);
+    }
+    100% {
+        background: radial-gradient(circle, rgb(230, 230, 230) 8%, blue 48%, blue 73%);
+    }
 }
 
+
+
+nav ul {
+    list-style: none;
+    background-color: #003785;
+    align-items: center;
+    padding: 0 2vh;
+    display: flex;
+    z-index: 10;
+    
+}
+nav ul li {
+    flex: 1;
+    margin: 2vh;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1vh 2vh;
+    display: block;
+}
+nav ul li a:hover {
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.562);
+}
+.conta {
+    position: relative;
+    right: 4vw;
+}
+#logo {
+    font-size: 1.6vw;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    right: 12vw;
+    text-align: start;
+    white-space: nowrap;
+    margin-left: 18vw;
+}
+nav ul li a:hover {
+    animation: typing 2s steps(24),blink 0.4s step-end infinite alternate;
+    text-shadow: 0rem 0rem 10px rgb(255, 255, 255);
+}
+@keyframes typing{
+    from {
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
 video {
     position: absolute;
     top: 50%;
@@ -12,56 +91,11 @@ video {
     min-width: 100%;
     min-height: 100%;
     width: auto;
-    height: auto;
     z-index: -1;
     transform: translate(-50%, -50%);
 }
-* {
-    font-family: 'Roboto', sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    background-color: #003785;
-    align-items: center;
-    padding: 0 2vh;
-}
-
-nav ul li {
-    margin: 2vh;
-    font-size: large;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 1vh 2vh;
-    display: block;
-}
-
-nav .conta {
-    margin-left: 20vw;
-    display: flex;
-    gap: 2vh;
-}
-
-nav .conta li {
-    margin: 1vw;
-}
-
-#logo {
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
-    left: 9vw;
-    text-align: start;
-    white-space: nowrap;
-}
-#info-projet{
-    background-color:#2195f3f5;
+#info-projet {
+    background-color: #2195f3f5;
     margin: 4vh;
     border-radius: 3vh;
 }
@@ -72,5 +106,7 @@ nav .conta li {
 }
 #info-projet > p {
     font-size: larger;
-    margin: 2%;
+}
+#info-projet h1 {
+    padding-top:1vh;
 }
