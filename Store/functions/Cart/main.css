@@ -8,7 +8,8 @@
 body {
     font-size: 3vh;
     height: 100vh;    
-    margin: 0;             
+    margin: 0;   
+    overflow: hidden          
 }
 
     /* NAVEGAÇÃO */
@@ -64,11 +65,10 @@ nav .conta li {
     /* PAGINA */ 
 
 
-.parent-container {
+form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
 }
 
 #vendas_tabela {
@@ -80,6 +80,11 @@ nav .conta li {
 #vendas_tabela * {
     position: relative;
     border: 2px solid black;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 5px;
 }
 #vendas_tabela input {
     top: 10%;
@@ -96,13 +101,35 @@ nav .conta li {
     
 }
 #adicionar_produtos {
+    position: relative;
     box-shadow: 0px 0px 15px;
     width: 30%;
     border-radius: 10px;
-    position: relative;
     left: 65%;
     margin: 5vh 5vh 5vh 5vh;
 }
-#adicionar_produtos p {
-    margin: 2%;
+
+#Enviar_venda {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12vw;
+    height: 7vh;
+    font-size: 1rem;
+}
+#fechar_texto {
+    position: relative;
+    left: 87%;
+    top: 1.5vh;
+    border-radius: 10px;
+    height: 100%;
+    width: 3.5vw;
+    font-size: 2.2rem;
+    cursor: pointer;
+    text-align: center;
+}
+#fechar_texto:hover {
+    background-color: deepskyblue;
+    color: white;
 }

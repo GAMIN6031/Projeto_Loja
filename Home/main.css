@@ -10,8 +10,10 @@ html, body {
     overflow: hidden;
 }
 body {
+    min-width: 1200px;
     font-size: 3vh;
     animation: wallpaper 10s infinite;
+    transition: background 2s ease-in-out; /* Adicionada transição suave */
 }
 @keyframes wallpaper {
     0% {
@@ -34,8 +36,6 @@ body {
     }
 }
 
-
-
 nav ul {
     list-style: none;
     background-color: #003785;
@@ -43,7 +43,6 @@ nav ul {
     padding: 0 2vh;
     display: flex;
     z-index: 10;
-    
 }
 nav ul li {
     flex: 1;
@@ -73,14 +72,14 @@ nav ul li a:hover {
     margin-left: 18vw;
 }
 nav ul li a:hover {
-    animation: typing 2s steps(24),blink 0.4s step-end infinite alternate;
+    animation: typing 2s steps(24), blink 0.4s step-end infinite alternate;
     text-shadow: 0rem 0rem 10px rgb(255, 255, 255);
 }
 @keyframes typing{
     from {
         width: 0;
     }
-    to{
+    to {
         width: 100%;
     }
 }
@@ -108,5 +107,5 @@ video {
     font-size: larger;
 }
 #info-projet h1 {
-    padding-top:1vh;
+    padding-top: 1vh;
 }

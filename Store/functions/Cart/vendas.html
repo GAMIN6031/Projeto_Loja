@@ -22,29 +22,21 @@
     </nav>
     
     <div id="adicionar_produtos">
+        <p id="fechar_texto" title="FECHAR!" onclick="    document.getElementById('adicionar_produtos').style.display='none';">X</p>
         <p>Você não acha ou não tem o produto que gostaria?</p>
         <p><a href="">Clique Aqui!</a> para ver os produtos e adicionar novos!</p>
     </div>
 
-    <form action="">
-        <div class="parent-container">
-            <div id="vendas_tabela">
+    <form action="../PDF/GeradorDeComprovante.html" method="post">
+            <div id="vendas_tabela" >
                 <input type="number" name="Produto" id="IdProduto" placeholder="ID do Produto">
-                <input type="number" name="quantidade" id="quantidade" placeholder="Quantidade">
-                <input type="text" name="Produto" id="Produto" placeholder="Nome do Produto">
-                <button><p style="border: none;">Valor</p></button>
-                <select id="select_id" size="1" style="width: 16vw; height: 7vh; top: 10%;" onfocus="selection_foco()">
-                    <option value="1">Opção 1</option>
-                    <option value="2">Opção 2</option>
-                    <option value="3">Opção 3</option>
-                    <option value="4">Opção 4</option>
-                    <option value="5">Opção 5</option>
-                </select>
+                <input type="number" name="quantidade" id="quantidade" placeholder="Quantidade" required>
+                <input type="text" name="Produto" id="Produto" placeholder="Nome do Produto" required>
+                <input type="number" name="Produto" id="Produto" placeholder="Nome do Produto">
+                <input type="number" name="Produto" id="Produto" placeholder="Nome do Produto">
             </div>
-        </div>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" id="Enviar_venda">
     </form>
-    
     <script src="main.js"></script>
 </body>
 </html>
