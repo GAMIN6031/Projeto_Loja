@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900&display=swap');
+
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -11,11 +13,27 @@ html, body {
 }
 body {
     min-width: 1200px;
-    font-size: 3vh;
     background-size: cover;
     background-color: rgb(209, 209, 209);
+    position: relative;
 }
 
+@keyframes carregamento {
+    from {
+        bottom: 156.2%;
+    }
+    to {
+        bottom: 56.2%;
+    }
+}
+
+#pagina {
+    display: none;
+    animation: carregamento 1s 1 forwards;
+    position: absolute;
+}
+
+    /* NAV BAR */
 nav ul {
     list-style: none;
     background-color: #003785;
@@ -45,7 +63,7 @@ nav ul li a:hover {
     right: 4vw;
 }
 #logo {
-    font-size: 2.5vw;
+    font-size: 2vw;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
@@ -55,47 +73,5 @@ nav ul li a:hover {
     margin-left: 18vw;
 }
 nav ul li a:hover {
-    animation: typing 0ms steps(24) forwards, blink 0.4s step-end infinite alternate;
     text-shadow: 0rem 0rem 10px rgb(255, 255, 255);
-}
-@keyframes typing {
-    from {
-        font-size: 3vh;
-    }
-    to {
-        font-size: 4vh;
-    }
-}
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 15%;
-    background-color: rgb(0, 140, 255);
-    color: white;
-    font-family: 'Montserrat';
-    font-size: 1rem;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-footer p {
-    position: relative;
-    text-align: center;
-    top: 20%;
-}
-#fechar_texto {
-    position: absolute;
-    right: 1%;
-    top: 15%;
-    border-radius: 10px;
-    width: 3.5vw;
-    font-size: 1.5rem;
-    cursor: pointer;
-    text-align: center;
-    z-index: 1;
-}
-#fechar_texto:hover {
-    background-color: deepskyblue;
-    color: white;
 }

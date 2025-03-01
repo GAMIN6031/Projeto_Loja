@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900&display=swap');
 * {
-    font-family: 'Roboto', sans-serif;
+    
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -11,107 +11,28 @@ html, body {
 }
 body {
     min-width: 1200px;
-    font-size: 3vh;
     background-size: cover;
     background-color: rgb(209, 209, 209);
 }
-
-nav ul {
-    list-style: none;
-    background-color: #003785;
-    align-items: center;
-    padding: 0 2vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
+#opcoes_acoes {
+    background-color: #000000a4;
+    height: 70%;
+    border-radius: 20px;
+    width: 95%;
+    position: relative;
+    top: 5%;
+    left: 2%;
+    
 }
-nav ul li {
-    flex: 1 0 100px;
-    margin: 5px;
-    text-align: center;
+.button {
+    width: 15%;
+    height: 7%;
+    border-radius: 2%;
+    margin: 2% 0% 0% 2%;
+    font-family: 'Poppins';
 }
-nav ul li a {
-    color: white;
+#opcoes_acoes a { 
     text-decoration: none;
-    padding: 1vh 2vh;
-    display: block;
-}
-nav ul li a:hover {
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.562);
-}
-.conta {
-    position: relative;
-    right: 4vw;
-}
-#logo {
-    font-size: 2.5vw;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
-    right: 12vw;
-    text-align: start;
-    white-space: nowrap;
-    margin-left: 18vw;
-}
-nav ul li a:hover {
-    animation: typing 0ms steps(24) forwards, blink 0.4s step-end infinite alternate;
-    text-shadow: 0rem 0rem 10px rgb(255, 255, 255);
-}
-@keyframes typing {
-    from {
-        font-size: 3vh;
-    }
-    to {
-        font-size: 4vh;
-    }
-}
-#opcoes-acoes {
-    background-color: #2195f3f5;
-    margin: 4vh;
-    border-radius: 3vh;
-}
-#opcoes-acoes * {
-    margin: 0% 2% 0% 2%;
-    font-family: 'Montserrat';
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-#opcoes-acoes ul li {
-    list-style-type: none;
-    margin: 2vh 2vh 2vh 2vh;
-    font-family: 'Montserrat';
-}
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 15%;
-    background-color: rgb(0, 140, 255);
-    color: white;
-    font-family: 'Montserrat';
-    font-size: 1rem;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-footer p {
-    position: relative;
-    text-align: center;
-    top: 20%;
-}
-#fechar_texto {
-    position: absolute;
-    right: 1%;
-    top: 15%;
-    border-radius: 10px;
-    width: 3.5vw;
-    font-size: 1.5rem;
-    cursor: pointer;
-    text-align: center;
-    z-index: 1;
-}
-#fechar_texto:hover {
-    background-color: deepskyblue;
-    color: white;
+    color: black;
+    
 }
