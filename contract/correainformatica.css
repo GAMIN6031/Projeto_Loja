@@ -1,4 +1,7 @@
-#contact{
+body {
+    overflow: hidden;
+}
+#correainformatica{
     position: absolute;
     top: 50%;
     left: 55%;
@@ -7,12 +10,30 @@
     width: 100%;
     height: 60%;
 }
+@keyframes proximo{
+    from { 
+        left: 55%;
+    }
+    to { 
+        left: -55%;
+    }
+}
+
+@keyframes voltar {
+    from { 
+        left: -55%;
+    }
+    to { 
+        left: 55%;
+    }
+}
+
 #img_empresa {
     background-color: #343434;
-    width: 40%;
+    width: 30%;
 }
 #hub_contato {
-    width: 50%; 
+    width: 60%; 
     height: 100%;
     background:#0272d4;
     color: white;
@@ -80,8 +101,41 @@ a {
     top: 20%;
     transform: translate(-50%,);
     text-align: center;
-    font-family: 'Poppins';
+    font-family: 'Madimi One';
+    font-size: 250%;
     color: #0272d4;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000000;
+}
+.seta { 
+    width: 50px;
+    height: 50px;
+    background-color: #0272d4 ;
+    box-shadow: 3px 3px 0px #000000;
+    cursor: pointer;
+    color: white;
+}
+.seta::before {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    border: 16px solid transparent;  
+    border-left: 28px solid white;
+    transform: translateX(10px);
+}
+.seta#seta_esquerda:before {
+    transform: rotate(180deg) translateX(10px);
+}
+#seta_direita {
+    right: 2%;
+    position: absolute;
+    top: 45%;
+}
+#seta_esquerda{
+    position: absolute;
+    top: 45%;
+    left: 2%;
+    display: none;
 }

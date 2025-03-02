@@ -1,0 +1,73 @@
+:root {
+    --cor1: #040031;
+    --cor2: #150b4a;
+    --cor3: #2b0b66;
+    --cor4: #420882;
+    --cor5: #5e1aa0;
+    --cor6: #7f3bbf;
+    --cor7: #a15adf;
+    --cor8: #c379ff;
+}
+#PieceByCode {
+    position: absolute;
+    top: 50%;
+    left: 155%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 100%;
+    height: 60%;
+}
+#informacoes_PieceByCode{
+    width: 60%;
+    height: 100%;
+    background-color: var(--cor5);
+}
+#sobreempresa {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+#sobreempresa p,h2 {
+    margin: 2% 0% 0% 2%;
+    font-family: 'Madimi One';
+    font-size: 1.3rem;
+}
+
+#redePieceByCode {
+    position: relative;
+    display: flex;
+    background-color: var(--cor3);
+    height: 30%;
+    top: 10%;
+}
+#redePieceByCode div {
+    margin: 0% 10% 0% 10%;
+    position: relative;
+    bottom: 5%;
+}
+#redePieceByCode p,h2 {
+    text-align: center;
+}
+#logo_PieceByCode {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    background-color: var(--cor2);
+}
+@keyframes proximopiece{
+    from { 
+        left: 155%;
+    }
+    to { 
+        left: 55%;
+    }
+}
+
+@keyframes voltarpiece {
+    from { 
+        left: 55%;
+    }
+    to { 
+        left: 155%;
+    }
+}
