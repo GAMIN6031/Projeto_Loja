@@ -8,7 +8,7 @@ body {
     transform: translate(-50%, -50%);
     display: flex;
     width: 100%;
-    height: 60%;
+    height: 70%;
 }
 @keyframes proximo{
     from { 
@@ -29,7 +29,7 @@ body {
 }
 
 #img_empresa {
-    background-color: #343434;
+    background-color: #34343438;
     width: 30%;
 }
 #hub_contato {
@@ -38,35 +38,37 @@ body {
     background:#0272d4;
     color: white;
     text-align: center;
-    padding: 0 0 5% 2%;
+    padding: 0 0 3% 0%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1vw;
 }
 #hub_contato p{
     text-align: left;
+    margin-left: 1%;
 }
 #hub_contato #redes_socias {
     position: relative;
-    top: 25%;
+    top: 10%;
 }
 #hub_contato .rede {
     font-family: 'Montserrat', sans-serif;
-    margin: -7% 6% 0% 6%;
+    margin: -2% 6% 0% 6%;
     font-weight: bold;
 }
 .rede img {
     background-color: white;
-    padding: 5%;
+    padding: 2%;
     border-radius: 100%;
     cursor: pointer;
+    width: 6vw;
 }
 #redes_socias {
     display: flex;
-    background: #343434;
+    background: #003785;
     color: #E4E4E4;
-    width: 95%;
-    height: 30%;
+    width: 100%;
+    height: 30.24%;
     white-space: nowrap;
 }
 
@@ -74,14 +76,10 @@ body {
     margin-right: 11%;
 }
 
-#redes_socias div p a {
+#redes_socias div p {
     text-decoration-line: none;
     color: white;
-}
-
-#Instagram {
-    position: relative;
-    top: 0;  /* Adjust to make sure it's within the container */
+    font-size: 1vw;
 }
 a {
     text-decoration-line: none;
