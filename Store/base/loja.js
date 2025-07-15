@@ -1,5 +1,3 @@
-class Item {
-    constructor(nome,i) {
-        
-    }
+function adicionar_item(params) {
+    
 }

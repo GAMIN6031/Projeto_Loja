@@ -1,139 +1,120 @@
+:root {
+  --cor-primaria: #1e3a5f;
+  --cor-secundaria: #f5f7fa;
+  --cor-texto: #333;
+  --fonte-principal: 'Poppins', sans-serif;
+  --fonte-secundaria: 'Open Sans', sans-serif;
+}
+
 body {
-    overflow: hidden;
-}
-#correainformatica{
-    position: absolute;
-    top: 50%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    width: 100%;
-    height: 70%;
-}
-@keyframes proximo{
-    from { 
-        left: 55%;
-    }
-    to { 
-        left: -55%;
-    }
+  margin: 0;
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto);
 }
 
-@keyframes voltar {
-    from { 
-        left: -55%;
-    }
-    to { 
-        left: 55%;
-    }
+/* Layout geral */
+#correainformatica {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 5vw;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Área de imagem da empresa */
 #img_empresa {
-    background-color: #34343438;
-    width: 30%;
+  background-color: var(--cor-primaria);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+#img_empresa h2 {
+  font-size: 2rem;
+  color: white;
+  margin-top: 1rem;
+}
+#logo_loja {
+  width: 120px;
+  border-radius: 50%;
+}
+
+/* Área de contato */
 #hub_contato {
-    width: 60%; 
-    height: 100%;
-    background:#0272d4;
-    color: white;
-    text-align: center;
-    padding: 0 0 3% 0%;
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-#hub_contato p{
-    text-align: left;
-    margin-left: 1%;
+#hub_contato h1 {
+  font-size: 2rem;
+  font-family: var(--fonte-secundaria);
+  margin-bottom: 1rem;
 }
-#hub_contato #redes_socias {
-    position: relative;
-    top: 10%;
+#hub_contato p {
+  font-family: var(--fonte-secundaria);
+  line-height: 1.6;
+  margin: 0.5rem 0;
 }
-#hub_contato .rede {
-    font-family: 'Montserrat', sans-serif;
-    margin: -2% 6% 0% 6%;
-    font-weight: bold;
+
+/* Redes sociais */
+#redes_socias {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.rede {
+  flex: 1;
+  min-width: 180px;
+  background-color: var(--cor-primaria);
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+.rede:hover {
+  transform: translateY(-4px);
 }
 .rede img {
-    background-color: white;
-    padding: 2%;
-    border-radius: 100%;
-    cursor: pointer;
-    width: 6vw;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-#redes_socias {
-    display: flex;
-    background: #003785;
-    color: #E4E4E4;
-    width: 100%;
-    height: 30.24%;
-    white-space: nowrap;
+.rede h2 {
+  margin: 0.5rem 0;
+}
+.rede p {
+  font-size: 0.9rem;
 }
 
-.rede {
-    margin-right: 11%;
-}
-
-#redes_socias div p {
-    text-decoration-line: none;
-    color: white;
-    font-size: 1vw;
-}
 a {
-    text-decoration-line: none;
-    color: white;
-}   
-#logo_loja {
-    position: relative;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 100%;
-    padding: 1%;
-    background: #0272d4;
+  text-decoration: none;
+  color: inherit;
 }
-#img_empresa h2{
-    position: relative;
-    top: 20%;
-    transform: translate(-50%,);
-    text-align: center;
-    font-family: 'Madimi One';
-    font-size: 250%;
-    color: #0272d4;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000000;
-}
-.seta { 
-    width: 50px;
-    height: 50px;
-    background-color: #0272d4 ;
-    box-shadow: 3px 3px 0px #000000;
-    cursor: pointer;
-    color: white;
-}
-.seta::before {
-    content: '';
-    display: block;
-    box-sizing: border-box;
-    width: 15px;
-    height: 15px;
-    border: 16px solid transparent;  
-    border-left: 28px solid white;
-    transform: translateX(10px);
-}
-.seta#seta_esquerda:before {
-    transform: rotate(180deg) translateX(10px);
-}
-#seta_direita {
-    right: 2%;
-    position: absolute;
-    top: 45%;
-}
-#seta_esquerda{
-    position: absolute;
-    top: 45%;
-    left: 2%;
-    display: none;
+
+
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  #correainformatica {
+    grid-template-columns: 1fr;
+  }
+
+  #redes_socias {
+    flex-direction: column;
+  }
+
+  #logo_loja {
+    width: 100px;
+  }
+
+  #img_empresa h2,
+  #hub_contato h1 {
+    font-size: 1.5rem;
+  }
 }
