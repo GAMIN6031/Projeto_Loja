@@ -1,0 +1,76 @@
+.pagina {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 30px;
+}
+
+.pagina form,
+.pagina table {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.pagina label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.pagina input,
+.pagina textarea,
+.pagina select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.pagina input[type="submit"] {
+  margin-top: 15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pagina table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pagina th,
+.pagina td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.pagina th {
+  background: #3498db;
+  color: white;
+}
+
+.pagina button {
+  padding: 5px 8px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagina .editar {
+  background: #f1c40f;
+}
+
+.pagina .deletar {
+  background: #e74c3c;
+  color: white;
+}
+
+.pagina .status {
+  background: #2ecc71;
+  color: white;
+}

@@ -5,24 +5,44 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Correa Informatica</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/nav.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/footer.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../Font/font.css'>
-    <script src="../JS/javascript.js"></script>
 
 </head>
 
 <body id="body">
-    <nav>
-        <ul>
-            <img src="../imgs/logo loja.jpg" alt="">
-            <li><a href="../Home/Index.html">INICIO</a></li>
-            <li><a href="../Store/base/Loja.html">LOJA</a></li>
-            <li><a href="../contract/index.html">CONTATO</a></li>
-            <li><a href="../services/index.html">SERVIÇOS</a></li>
-        </ul>
-    </nav>
+
+<div class="hamburger" onclick="toggleSidebar()">☰</div>
+<nav>
+  <ul>
+    <img src="../imgs/logo loja.jpg" alt="Logo Loja">
+    <li><a href="../Home/Index.html">INICIO</a></li>
+    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../contract/index.html">CONTATO</a></li>
+    <li><a href="../services/index.php">SERVIÇOS</a></li>
+  </ul>
+  <ul id="conta">
+    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+  </ul>
+</nav>
+
+<!-- Menu lateral (mobile), mantendo o id original -->
+<div class="mobile-sidebar" id="sidebar">
+  <ul>
+    <img src="../imgs/logo loja.jpg" alt="Logo Loja">
+    <li><a href="../Home/Index.html">INICIO</a></li>
+    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../contract/index.html">CONTATO</a></li>
+    <li><a href="../services/index.php">SERVIÇOS</a></li>
+  </ul>
+  <ul id="conta">
+    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+  </ul>
+</div>
+
+
+
 
 
 <main>
@@ -54,13 +74,11 @@
 
 </main>
 
-    
-<footer id="footer">
-    <p>&copy; 2025 Correa Informática. Todos os direitos reservados.</p>
-    <p>Desenvolvendo soluções tecnológicas de ponta para você.</p>
-    <p>Conectando pessoas e ideias.</p>
-</footer>
-
+  <script src="../JS/logado.js"></script>  
     <script src="main.js"></script>
+    <script src="../JS/javascript.js"></script>
+    <script>
+   
+    </script>
 </body>
 </html>

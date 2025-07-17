@@ -15,6 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($linha && $senha === $linha['senha']) {
         echo json_encode(["sucesso" => true]);
+        session_start();
+          $_SESSION['user_role'] = 'Admin'; // define a chave de adm
+
     } else {
         echo json_encode(["sucesso" => false]);
     }
@@ -38,18 +41,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="../Font/font.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <img src="../imgs/logo loja.jpg" alt="">
-      <li><a href="../Home/Index.html">INICIO</a></li>
-      <li><a href="../Store/base/Loja.html">LOJA</a></li>
-      <li><a href="../contract/index.html">CONTATO</a></li>
-      <li><a href="../services/index.html">SERVIÇOS</a></li>
-    </ul>
-    <ul>
-      <li><a href="../Login/login.php">LOGIN</a></li>
-    </ul>
-  </nav>
+  
+<div class="hamburger" onclick="toggleSidebar()">☰</div>
+<nav>
+  <ul>
+    <img src="../imgs/logo loja.jpg" alt="Logo Loja">
+    <li><a href="../Home/Index.html">INICIO</a></li>
+    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../contract/index.html">CONTATO</a></li>
+    <li><a href="../services/index.php">SERVIÇOS</a></li>
+  </ul>
+  <ul id="conta">
+    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+  </ul>
+</nav>
+
+<!-- Menu lateral (mobile), mantendo o id original -->
+<div class="mobile-sidebar" id="sidebar">
+  <ul>
+    <img src="../imgs/logo loja.jpg" alt="Logo Loja">
+    <li><a href="../Home/Index.html">INICIO</a></li>
+    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../contract/index.html">CONTATO</a></li>
+    <li><a href="../services/index.php">SERVIÇOS</a></li>
+  </ul>
+  <ul id="conta">
+    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+  </ul>
+</div>
+
+
+
 
   <main>
     <div class="login-box">
@@ -60,32 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <p id="mensagem"></p>
     </div>
   </main>
-  <script>
-function verificarSenha() {
-  const usuario = document.getElementById('usuario').value;
-  const senha = document.getElementById('senha').value;
-  const mensagem = document.getElementById('mensagem');
-
-  fetch('login.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: `usuario=${encodeURIComponent(usuario)}&senha=${encodeURIComponent(senha)}`
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.sucesso) {
-      mensagem.textContent = '✅ Login bem-sucedido!';
-      mensagem.style.color = 'green';
-      document.cookie = "Admin="+usuario+";expires=Fri, 13 Dec 2027 23:59:59 GMT; path=/";
-    } else {
-      mensagem.textContent = '❌ Usuário ou senha incorretos.';
-      mensagem.style.color = 'red';
-    }
-  })
-}
-
-  </script>
+  <script src='main.js'></script>
+  <script src="../JS/logado.js"></script>  
 </body>
 </html>
