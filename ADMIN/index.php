@@ -95,8 +95,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     <div class="pagina">
-<h2>Nova Ordem de Serviço</h2>
 <form method="POST">
+    <h2>Nova Ordem de Serviço</h2>
     <label>Nome:</label>
     <input type="text" name="nome" required>
     <label>Telefone:</label>
@@ -115,8 +115,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <input type="submit" value="Cadastrar">
 </form>
 
-<h2>Serviços Registrados</h2>
 <table>
+<h2>Serviços Registrados</h2>
+
     <tr>
         <th>ID</th>
         <th>Nome</th>
