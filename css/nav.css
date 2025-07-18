@@ -13,10 +13,9 @@
 }
 
 body {
-  padding-top: 60px;
   background-color: #f8f9fa;
-}
 
+}
 /* ===== Navbar principal ===== */
 nav {
   width: 100%;
@@ -28,9 +27,6 @@ nav {
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   animation: slideDown 0.6s ease forwards;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: var(--z-navbar);
 }
 
