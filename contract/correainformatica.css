@@ -6,13 +6,21 @@
   --fonte-secundaria: 'Open Sans', sans-serif;
 }
 
-body {
+/* Reset básico */
+html, body {
   margin: 0;
-  font-family: var(--fonte-principal);
+  padding: 0;
+  overflow-x: hidden; /* evita scroll horizontal */
+  box-sizing: border-box;
   background-color: var(--cor-secundaria);
   color: var(--cor-texto);
+  font-family: var(--fonte-principal);
 }
 
+/* Aplica box-sizing para todos elementos */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 /* Layout geral */
 #correainformatica {
   display: grid;
@@ -67,7 +75,7 @@ body {
 }
 .rede {
   flex: 1;
-  min-width: 180px;
+  /* Removido min-width para evitar overflow em mobile */
   background-color: var(--cor-primaria);
   border-radius: 8px;
   color: white;
@@ -97,16 +105,27 @@ a {
   color: inherit;
 }
 
-
+/* Imagens responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* Responsividade */
 @media screen and (max-width: 768px) {
   #correainformatica {
     grid-template-columns: 1fr;
+    padding: 2vw; /* padding reduzido para telas pequenas */
   }
 
   #redes_socias {
     flex-direction: column;
+  }
+
+  .rede {
+    width: 100%; /* força largura total para evitar overflow */
+    min-width: auto; /* remove o min-width */
   }
 
   #logo_loja {

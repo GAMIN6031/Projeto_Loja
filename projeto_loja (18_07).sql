@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17/07/2025 às 23:52
+-- Tempo de geração: 19/07/2025 às 00:37
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -57,28 +57,6 @@ CREATE TABLE `ordemdeservico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Despejando dados para a tabela `ordemdeservico`
---
-
-INSERT INTO `ordemdeservico` (`id`, `nome`, `telefone`, `aparelho`, `defeito`, `tempo`, `status`) VALUES
-(17, 'pedro', '111111111', 'sansung a06', 'nenhum', '1 dia', 'Em andamento'),
-(18, 'pedro', '1234', 'sansung a06', 'teste', '1 dia', 'Em andamento'),
-(19, 'pedro', '1234', 'sansung a06', 'teste', '1 dia', 'Em andamento');
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `nome` int(11) NOT NULL,
-  `senha` int(11) NOT NULL,
-  `cpf` int(11) NOT NULL,
-  `tel` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
 -- Índices para tabelas despejadas
 --
 
@@ -95,12 +73,6 @@ ALTER TABLE `ordemdeservico`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`cpf`);
-
---
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -108,7 +80,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `ordemdeservico`
 --
 ALTER TABLE `ordemdeservico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

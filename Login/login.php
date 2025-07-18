@@ -37,38 +37,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <!-- Estilos -->
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="../css/nav.css">
-  <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../Font/font.css">
 </head>
 <body>
   
-<div class="hamburger" onclick="toggleSidebar()">☰</div>
+<div class="hamburger" onclick="toggleSidebar()" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
 <nav>
   <ul>
     <img src="../imgs/logo loja.jpg" alt="Logo Loja">
     <li><a href="../Home/Index.html">INICIO</a></li>
-    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../Store/Loja.php">LOJA</a></li>
     <li><a href="../contract/index.html">CONTATO</a></li>
     <li><a href="../services/index.php">SERVIÇOS</a></li>
   </ul>
   <ul id="conta">
-    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+    <li><a href="../Login/login.php" class="nick">LOGIN</a></li>
   </ul>
 </nav>
 
-<!-- Menu lateral (mobile), mantendo o id original -->
+<!-- Menu lateral (mobile) -->
 <div class="mobile-sidebar" id="sidebar">
   <ul>
     <img src="../imgs/logo loja.jpg" alt="Logo Loja">
     <li><a href="../Home/Index.html">INICIO</a></li>
-    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../Store/Loja.php">LOJA</a></li>
     <li><a href="../contract/index.html">CONTATO</a></li>
     <li><a href="../services/index.php">SERVIÇOS</a></li>
   </ul>
-  <ul id="conta">
-    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+  <ul id="conta-mobile">
+    <li><a href="../Login/login.php" class="nick">LOGIN</a></li>
   </ul>
 </div>
+
 
 
 
@@ -84,5 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </main>
   <script src='main.js'></script>
   <script src="../JS/logado.js"></script>  
+  <script src="../JS/javascript.js"></script>
 </body>
 </html>

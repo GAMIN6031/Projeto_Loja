@@ -2,15 +2,15 @@
 
 $server = 'localhost';
 $usuario = 'root';
-$senha = '';
 $banco = 'projeto_loja';
-$conn = new mysqli($server,$usuario,$senha,$banco);
+$senha = '880317Vid@';
 
-if($conn->connect_error){
-    die($conn->connect_error); // <- ponto e vírgula adicionado aqui
-} else {
-    echo "";
-}
+$conn = new mysqli($server, $usuario, $senha, $banco);
 
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+} 
+
+// Se quiser evitar mostrar mensagem, pode deixar o else vazio ou removê-lo
 
 ?>

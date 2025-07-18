@@ -1,90 +1,140 @@
+:root {
+  --z-navbar: 100;
+  --z-sidebar: 105;
+  --z-hamburger: 110;
+}
+
 /* Reset básico */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
-/* Navbar animada */
+
+body {
+  padding-top: 60px;
+  background-color: #f8f9fa;
+}
+
+/* ===== Navbar principal ===== */
 nav {
-    width: 100%;
-    height: 8vh;
-    display: flex;
-    align-items: center;
-    padding: 0 2vw;
-    justify-content: space-between;
-    background-color: #fff;
-    animation: slideDown 0.6s ease forwards;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-/* Menu de navegação */
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1.5vw;
-    align-items: center;
-}
-
-/* Logo */
-nav ul img {
-    height: 60px;
-    object-fit: contain;
-    animation: fadeInScale 1s ease forwards;
-}
-
-/* Links animados */
-nav ul li a {
-    font-size: 0.9rem;
-    color: #000;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover {
-  background-color: gray;
-  transform: translateY(-2px);
-  color: white;
-  font-size: 1rem;
-  transition: all 400ms ease;
-}
-
-/* Keyframes */
-@keyframes slideDown {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInScale {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-/* Botão hamburguer */
-.hamburger {
-  display: none;
-  font-size: 2rem;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.6s ease forwards;
   position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 102;
+  top: 0;
+  left: 0;
+  z-index: var(--z-navbar);
+}
+
+/* Lista principal do nav */
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Logo no nav */
+nav ul img {
+  height: 50px;
+  object-fit: contain;
+  animation: fadeInScale 1s ease forwards;
   cursor: pointer;
 }
 
-/* Sidebar oculta por padrão */
+/* Links do menu nav */
+nav ul li a {
+  font-size: 1rem;
+  color: #222;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #555;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Conta/Login separado */
+#conta {
+  display: flex;
+  align-items: center;
+}
+
+#conta li a#nick {
+  font-weight: 700;
+  color: #007BFF;
+  transition: color 0.3s ease;
+}
+
+#conta li a#nick:hover,
+#conta li a#nick:focus {
+  color: #0056b3;
+  background-color: transparent;
+  transform: none;
+}
+
+/* ===== Botão hamburger para mobile ===== */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: var(--z-hamburger);
+  user-select: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #222;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.hamburger:hover span {
+  background-color: #007BFF;
+}
+
+.hamburger:focus {
+  outline: 2px solid #007BFF;
+  outline-offset: 4px;
+}
+
+/* Estado ativo - transforma barras em X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== Sidebar móvel ===== */
 .mobile-sidebar {
   position: fixed;
   top: 0;
@@ -92,55 +142,155 @@ nav ul li a:hover {
   width: 260px;
   height: 100vh;
   background-color: #fff;
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
   transform: translateX(-100%);
   transition: transform 0.3s ease;
-  z-index: 101;
-  padding: 2rem 1rem;
+  z-index: var(--z-sidebar);
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  overflow-y: auto;
 }
 
+/* Sidebar visível */
 .mobile-sidebar.active {
   transform: translateX(0);
+  animation: slideInLeft 0.4s ease forwards;
 }
 
+/* Lista da sidebar */
 .mobile-sidebar ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
+/* Logo da sidebar */
 .mobile-sidebar ul img {
-  width: 200px;
-  padding-left:5%;
-  margin-bottom: 1rem;
+  width: 180px;
+  margin-left: 5%;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
+.mobile-sidebar ul img:hover {
+  transform: scale(1.05);
+}
+
+/* Links sidebar */
 .mobile-sidebar ul li a {
+  color: #222;
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
   text-decoration: none;
-  color: #000;
-  font-size: 1rem;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
 }
 
-.mobile-sidebar ul li a:hover {
-  background-color: gray;
-  color: white;
-  transform: translateX(5px);
+.mobile-sidebar ul li a:hover,
+.mobile-sidebar ul li a:focus {
+  background-color: #555;
+  color: #fff;
+  transform: translateX(8px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Esconde nav tradicional e exibe hamburguer no mobile */
+/* Sidebar "conta" links */
+.mobile-sidebar #conta li a#nick {
+  font-weight: 700;
+  color: #007BFF;
+}
+
+.mobile-sidebar #conta li a#nick:hover,
+.mobile-sidebar #conta li a#nick:focus {
+  color: #0056b3;
+  background-color: transparent;
+  transform: none;
+}
+
+/* ===== Animações ===== */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ===== Media Queries ===== */
 @media (max-width: 768px) {
   nav {
     display: none;
   }
 
   .hamburger {
-    display: block;
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav ul {
+    gap: 1rem;
+  }
+  nav ul img {
+    height: 25px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-sidebar {
+    padding: 1.5rem 1rem;
+  }
+
+  .mobile-sidebar ul li a {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Dark mode opcional (prefers-color-scheme) ===== */
+@media (prefers-color-scheme: dark) {
+  nav,
+  .mobile-sidebar {
+    background-color: white;
+  }
+
+  nav ul li a,
+  .mobile-sidebar ul li a {
+    color: black;
+  }
+
+  .mobile-sidebar ul li a:hover,
+  nav ul li a:hover {
+    background-color: #444;
+    color: #fff;
   }
 }

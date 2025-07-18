@@ -8,39 +8,42 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../css/nav.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../Font/font.css'>
-
 </head>
 
 <body id="body">
 
-<div class="hamburger" onclick="toggleSidebar()">☰</div>
+<div class="hamburger" onclick="toggleSidebar()" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
 <nav>
   <ul>
     <img src="../imgs/logo loja.jpg" alt="Logo Loja">
     <li><a href="../Home/Index.html">INICIO</a></li>
-    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../Store/Loja.php">LOJA</a></li>
     <li><a href="../contract/index.html">CONTATO</a></li>
     <li><a href="../services/index.php">SERVIÇOS</a></li>
   </ul>
   <ul id="conta">
-    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+    <li><a href="../Login/login.php" class="nick">LOGIN</a></li>
   </ul>
 </nav>
 
-<!-- Menu lateral (mobile), mantendo o id original -->
+<!-- Menu lateral (mobile) -->
 <div class="mobile-sidebar" id="sidebar">
   <ul>
     <img src="../imgs/logo loja.jpg" alt="Logo Loja">
     <li><a href="../Home/Index.html">INICIO</a></li>
-    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../Store/Loja.php">LOJA</a></li>
     <li><a href="../contract/index.html">CONTATO</a></li>
     <li><a href="../services/index.php">SERVIÇOS</a></li>
   </ul>
-  <ul id="conta">
-    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+  <ul id="conta-mobile">
+    <li><a href="../Login/login.php" class="nick">LOGIN</a></li>
   </ul>
 </div>
-
 
 
 
@@ -58,7 +61,7 @@
     <section class="caixa-aviso">
         <h2>Visualização de Ordem de Serviço</h2>
         <p>Disponibilizamos uma página exclusiva para que você possa acompanhar o status da sua ordem de serviço com agilidade e transparência.</p>
-        <p>Para acessar, basta visitar nossa <a href="#" target="_blank" onclick="desenvolvimento()">página de verificação</a> disponível no menu ou clicando no link acima.</p>
+        <p>Para acessar, basta visitar nossa <a href="../services/index.php" target="_blank" onclick="desenvolvimento()">página de verificação</a> disponível no menu ou clicando no link acima.</p>
         <p>Correa Informatika valoriza sua confiança e trabalha para manter um atendimento eficiente em cada etapa do serviço técnico.</p>
     </section>
 
@@ -68,7 +71,7 @@
         <p>Oferecemos desde itens exclusivos até lançamentos que você só encontra aqui. Tudo com uma experiência de compra segura e prática.</p>
         <p>Estamos constantemente adicionando novidades, então fique de olho para não perder nenhuma oportunidade.</p>
         <p>Aproveite nossas descontos. Você pode pagar com cartões, dinheiro e Pix  — como preferir!</p>
-        <p><a href="../Store/base/Loja.html" target="_blank">Acesse a loja agora e veja tudo o que preparamos pra você!</a></p>
+        <p><a href="../Store/loj" target="_blank">Acesse a loja agora e veja tudo o que preparamos pra você!</a></p>
     </section>
 
 

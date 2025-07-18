@@ -27,7 +27,11 @@ function verificarSenha() {
       }
 
       // Atualiza o cookie com a lista de usuários
-      document.cookie = `usuarios=${usuarios.join(',')};expires=Fri, 13 Dec 2027 23:59:59 GMT; path=/`;
+      const now = new Date();
+      now.setTime(now.getTime() + 1 * 24 * 60 * 60 * 1000); // adiciona 1 dia em milissegundos
+      const expires = now.toUTCString();
+      document.cookie = `usuarios=${usuarios.join(',')};expires=${expires};path=/`;
+
 
       location.reload();
     } else {

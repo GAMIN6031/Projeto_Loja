@@ -1,99 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Correa Informatika</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='correainformatica.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='PieceByCode.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/footer.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/nav.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../Font/font.css'>
-    <script src="../JS/javascript.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Correa Informatika</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="correainformatica.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../Font/font.css" />
+  <script src="../JS/javascript.js" defer></script>
 </head>
 <body>
-    
-<div class="hamburger" onclick="toggleSidebar()">☰</div>
-<nav>
+
+  <div class="hamburger" onclick="toggleSidebar()" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+ <nav>
   <ul>
     <img src="../imgs/logo loja.jpg" alt="Logo Loja">
     <li><a href="../Home/Index.html">INICIO</a></li>
-    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../Store/Loja.php">LOJA</a></li>
     <li><a href="../contract/index.html">CONTATO</a></li>
     <li><a href="../services/index.php">SERVIÇOS</a></li>
   </ul>
   <ul id="conta">
-    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+    <li><a href="../Login/login.php" class="nick">LOGIN</a></li>
   </ul>
 </nav>
 
-<!-- Menu lateral (mobile), mantendo o id original -->
+<!-- Menu lateral (mobile) -->
 <div class="mobile-sidebar" id="sidebar">
   <ul>
     <img src="../imgs/logo loja.jpg" alt="Logo Loja">
     <li><a href="../Home/Index.html">INICIO</a></li>
-    <li><a href="../Store/Loja.html">LOJA</a></li>
+    <li><a href="../Store/Loja.php">LOJA</a></li>
     <li><a href="../contract/index.html">CONTATO</a></li>
     <li><a href="../services/index.php">SERVIÇOS</a></li>
   </ul>
-  <ul id="conta">
-    <li><a href="../Login/login.php" id="nick">LOGIN</a></li>
+  <ul id="conta-mobile">
+    <li><a href="../Login/login.php" class="nick">LOGIN</a></li>
   </ul>
 </div>
 
 
 
 
+  <main id="correainformatica">
+    <section id="hub_contato">
+      <h1>Nossas Redes Sociais</h1>
+      <p>Correa Informática e Smartphone atua no ramo de Assistência técnica de informática, horário de funcionamento Segunda a Sábado.</p>
+      <p>Localizado na Avenida Boturussu, 632 - Parque Boturussu, São Paulo - SP, 03802-000.</p>
+      <p>Telefone de contato (11) 94807-5271.</p>
+      <p>Para visualizar a Correa Informática e Smartphone no mapa, trace sua rota e veja como chegar no endereço.</p>
+      <p>Preparamos uma lista de Assistência técnica de informática em São Paulo - SP com empresas semelhantes a Correa Informática e Smartphone em São Paulo</p>
 
-        <div id="correainformatica">
-            <div id="hub_contato">
-                <h1>Nossas Redes Sociais</h1>
-                <p>Correa Informática e Smartphone atua no ramo de Assistência técnica de informática, horário de funcionamento Segunda a Sábado.</p>
-                    <p>Localizado na Avenida Boturussu, 632 - Parque Boturussu, São Paulo - SP, 03802-000.</p>
-            
-                    <p>Telefone de contato (11) 94807-5271.</p>
-            
-                    <p>Para visualizar a Correa Informática e Smartphone no mapa, trace sua rota e veja como chegar no endereço.</p>
-            
-                    <p>Preparamos uma lista de Assistência técnica de informática em São Paulo - SP com empresas semelhantes a Correa Informática e Smartphone em São Paulo</p>
-                <div id="redes_socias">
-                    <div id="whatsapp" class="rede">
-                        <a href="https://wa.me/+5511948075271" target="_blank">
-                            <img src="../imgs/whatsapp.png">
-                            <h2>Whatsapp</h2>
-                            <p>+55 11 94807-5271</p>
-                        </a>
-                    </div>
-                    <div id="Instagram" class="rede"><a href="https://www.instagram.com/correainformatika?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                        
-                            <img src="../imgs/instagramcinza.webp" alt="Instagram">
-                            <h2>Instagram</h2>
-                            <p>@Correainformatika</p>
-                    </a>
-                    </div>
-                    <div id="localizacao" class="rede"><a href="https://maps.app.goo.gl/vYNjKRzC59iaCXv2A" target="_blank">
-                        <img src="../imgs/localização.png" alt="Localizacao" >
-                        <h2>Localizacao</h2>
-                        <p>Av. Boturussu, 632 - Parque Boturussu</p>
-                        </a></div>
-                </div>
-            </div>
-
-            <div id="img_empresa">
-                <img src="../imgs/logo loja2.jpg" alt="" id="logo_loja">
-                <h2>Correa Informatika Smart</h2>
-            </div>
+      <div id="redes_socias">
+        <div id="whatsapp" class="rede">
+          <a href="https://wa.me/+5511948075271" target="_blank" rel="noopener noreferrer">
+            <img src="../imgs/whatsapp.png" alt="WhatsApp" />
+            <h2>Whatsapp</h2>
+            <p>+55 11 94807-5271</p>
+          </a>
         </div>
+        <div id="Instagram" class="rede">
+          <a href="https://www.instagram.com/correainformatika" target="_blank" rel="noopener noreferrer">
+            <img src="../imgs/instagramcinza.webp" alt="Instagram" />
+            <h2>Instagram</h2>
+            <p>@Correainformatika</p>
+          </a>
+        </div>
+        <div id="localizacao" class="rede">
+          <a href="https://maps.app.goo.gl/vYNjKRzC59iaCXv2A" target="_blank" rel="noopener noreferrer">
+            <img src="../imgs/localização.png" alt="Localização" />
+            <h2>Localização</h2>
+            <p>Av. Boturussu, 632 - Parque Boturussu</p>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        
-        <footer id="footer">
-            <p>&copy; 2025 Correa Informática. Todos os direitos reservados.</p>
-            <p>Desenvolvendo soluções tecnológicas de ponta para você.</p>
-            <p>Conectando pessoas e ideias.</p>
-        </footer>
-        <script src='javascript.js'></script>
-        <script src="../JS/logado.js"></script>  
+    <section id="img_empresa">
+      <img src="../imgs/logo loja2.jpg" alt="Logo da Empresa" id="logo_loja" />
+      <h2>Correa Informatika Smart</h2>
+    </section>
+  </main>
+
+  <script src="../JS/logado.js" defer></script>
 
 </body>
 </html>
