@@ -17,7 +17,7 @@ if ($result && $result->num_rows > 0) {
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <title>Correa Informática - Loja</title>
+  <title>Correa Informatika - Loja</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/nav.css">
   <link rel="stylesheet" href="../Font/font.css">
@@ -26,16 +26,16 @@ if ($result && $result->num_rows > 0) {
 <body>
 
 <!-- Botão Hamburger -->
+<!-- Carrinho fixo no topo (opcional) -->
+<a href="#" id="carrinho-container-top" title="Clique para ver a sacola" aria-label="Sacola">
+  🛒 <span id="contador-sacola-top">0</span>
+</a>
 <div class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="sidebar" role="button" tabindex="0">
   <span></span>
   <span></span>
   <span></span>
 </div>
 
-<!-- Carrinho fixo no topo (opcional) -->
-<a href="#" id="carrinho-container-top" title="Clique para ver a sacola" aria-label="Sacola">
-  🛒 <span id="contador-sacola-top">0</span>
-</a>
 
 <!-- Barra de navegação principal -->
 <nav>
@@ -47,12 +47,8 @@ if ($result && $result->num_rows > 0) {
     <li><a href="../services/index.php">SERVIÇOS</a></li>
   </ul>
   <ul id="conta">
-    <li>
-      <a href="#" id="carrinho-container" title="Clique para ver a sacola">
-        🛒 Sacola <span id="contador-sacola">0</span>
-      </a>
-    </li>
     <li><a href="../Login/login.php" class="nick">LOGIN</a></li>
+    <li><a href="#" id="carrinho-container" title="Clique para ver a sacola">🛒 Sacola <span id="contador-sacola">0</span></a></li>
   </ul>
 </nav>
 

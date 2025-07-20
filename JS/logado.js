@@ -3,13 +3,13 @@ function getCookie(nome) {
   const ca = document.cookie.split(';');
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i].trim();
-    if (c.indexOf(nomeEQ) === 0) return c.substring(nomeEQ.length, c.length);
+    if (c.indexOf(nomeEQ) === 0) return c.substring(nomeEQ.length);
   }
   return null;
 }
 
 function exibirUsuarioAdmin() {
-  const usuariosCookie = getCookie("usuarios"); // Exemplo: "GAMIN=Admin,Joao=12345"
+  const usuariosCookie = getCookie("usuarios");
 
   if (usuariosCookie) {
     const usuariosArr = usuariosCookie.split(",");
@@ -17,12 +17,9 @@ function exibirUsuarioAdmin() {
     for (const u of usuariosArr) {
       const [nome, senha] = u.split("=");
 
-      if (senha === "Admin") {
-        // Atualiza todos os elementos com a classe 'nick'
+      if (senha.trim() === "Admin") {
         const nicks = document.querySelectorAll('.nick');
-        nicks.forEach(el => {
-          el.innerHTML = `User: Admin (${nome})`;
-        });
+        nicks.forEach(el => el.innerHTML = `User: Admin (${nome})`);
 
         criarBotaoSairConta();
         areaAdmin();
@@ -30,10 +27,7 @@ function exibirUsuarioAdmin() {
       }
     }
   } else {
-    // Remove botão sair se não logado
-    document.querySelectorAll('#btn-sair-conta').forEach(btn => {
-      btn.parentNode.removeChild(btn);
-    });
+    document.querySelectorAll('#btn-sair-conta').forEach(btn => btn.remove());
   }
 }
 
@@ -42,7 +36,6 @@ function areaAdmin() {
     const ulConta = document.getElementById(id);
     if (!ulConta) return;
 
-    // Evita duplicar o link da área admin
     const existe = [...ulConta.children].some(li =>
       li.textContent.includes("ÁREA ADMINISTRATIVA")
     );
@@ -62,7 +55,6 @@ function criarBotaoSairConta() {
     const ulConta = document.getElementById(id);
     if (!ulConta) return;
 
-    // Evita duplicar o botão
     if (ulConta.querySelector('#btn-sair-conta')) return;
 
     const botao = document.createElement('button');
@@ -85,10 +77,8 @@ function criarBotaoSairConta() {
   });
 }
 
-// Executa ao carregar a página
 exibirUsuarioAdmin();
 
-// Favicon
 let link = document.createElement('link');
 link.rel = 'shortcut icon';
 link.type = 'image/x-icon';

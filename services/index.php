@@ -34,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["action"]) && $_POST["
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Correa Informática - Buscar Ordem</title>
+  <title>Correa Informátika - Buscar Ordem</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../Font/font.css" />
   <link rel="stylesheet" href="../css/nav.css" />
-  <link rel="stylesheet" href="../css/services.css" />
+  <link rel="stylesheet" href="services.css" />
 </head>
 <body>
 <div class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="sidebar" role="button" tabindex="0">
@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["action"]) && $_POST["
   <div style="height: 10vh;"></div>
   <div class="pagina">
     <div id="div_dados">
-      <h2>Localizar Ordem de Serviço</h2>
+      <h2>Encontrar Ordem de Serviço</h2>
 
       <label for="ID">ID:</label>
       <input type="text" id="ID" name="id" placeholder="ID da Ordem" />
@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["action"]) && $_POST["
   </div>
 
   <script src="main.js"></script>
-  <script src="../JS/javascript.js"></script>
   <script src="../JS/logado.js"></script>
+  <script src="../JS/javascript.js"></script>
 </body>
 </html>

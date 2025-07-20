@@ -144,6 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordem de Serviço + Cadastro de Produtos</title>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/nav.css'>
@@ -204,34 +205,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!-- TABELA DE PRODUTOS -->
 <h2 style="margin-top: 60px;">Produtos Cadastrados</h2>
 <table>
-  <tr>
-    <th>ID</th>
-    <th>Nome</th>
-    <th>Descrição</th>
-    <th>Preço</th>
-    <th>Imagem</th>
-    <th>Ações</th>
-  </tr>
-  <?php
-  $produtos = $conn->query("SELECT * FROM produtos ORDER BY id DESC");
-  while ($p = $produtos->fetch_assoc()) {
-    echo "<tr>
-      <td data-label>{$p['id']}</td>
-      <td data-label>{$p['nome']}</td>
-      <td data-label>{$p['descricao']}</td>
-      <td data-label>R$ " . number_format($p['preco'], 2, ',', '.') . "</td>
-      <td data-label><img src='../uploads/{$p['imagem']}' alt='' width='60'></td>
-      <td>
-        <form method='POST' onsubmit=\"return confirm('Tem certeza que deseja excluir este produto?');\">
-          <input type='hidden' name='form_type' value='deletar_produto'>
-          <input type='hidden' name='produto_id' value='{$p['id']}'>
-          <input type='submit' value='Excluir' style='color: red; font-weight: bold;'>
-        </form>
-      </td>
-    </tr>";
-  }
-  ?>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Preço</th>
+      <th>Imagem</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+    $produtos = $conn->query("SELECT * FROM produtos ORDER BY id DESC");
+    while ($p = $produtos->fetch_assoc()) {
+      echo "<tr>
+        <td data-label='ID'>{$p['id']}</td>
+        <td data-label='Nome'>{$p['nome']}</td>
+        <td data-label='Descrição'>{$p['descricao']}</td>
+        <td data-label='Preço'>R$ " . number_format($p['preco'], 2, ',', '.') . "</td>
+        <td data-label='Imagem'><img src='../uploads/{$p['imagem']}' alt='' width='60'></td>
+        <td data-label='Ações'>
+          <form method='POST' onsubmit=\"return confirm('Tem certeza que deseja excluir este produto?');\">
+            <input type='hidden' name='form_type' value='deletar_produto'>
+            <input type='hidden' name='produto_id' value='{$p['id']}'>
+            <input type='submit' value='Excluir' style='color: red; font-weight: bold;'>
+          </form>
+        </td>
+      </tr>";
+    }
+    ?>
+  </tbody>
 </table>
+
 
     <!-- FORMULÁRIO NOVA ORDEM DE SERVIÇO -->
     <form method="POST" style="margin-top: 40px;">
@@ -252,50 +258,56 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <option value="Em andamento">Em andamento</option>
             <option value="Pronto">Pronto</option>
         </select>
-        <input type="submit" value="Cadastrar OS">
+        <input type="submit" value="Cadastrar">
     </form>
 
     <!-- TABELA ORDEM DE SERVIÇO -->
-    <table style="margin-top: 40px;">
-        <h2>Serviços Registrados</h2>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>Aparelho</th>
-            <th>Defeito</th>
-            <th>Tempo</th>
-            <th>Status</th>
-            <th>Ações</th>
-        </tr>
-        <?php
-        $resultado = $conn->query("SELECT * FROM ordemdeservico ORDER BY id DESC");
-        while ($linha = $resultado->fetch_assoc()) {
-            $json = htmlspecialchars(json_encode($linha), ENT_QUOTES, 'UTF-8');
-            echo "<tr>
-                <td>{$linha["id"]}</td>
-                <td>{$linha["nome"]}</td>
-                <td>{$linha["telefone"]}</td>
-                <td>{$linha["aparelho"]}</td>
-                <td>{$linha["defeito"]}</td>
-                <td>{$linha["tempo"]}</td>
-                <td>{$linha["status"]}</td>
-                <td>
-                    <button class='editar' onclick='editar($json)'>Editar</button>
-                    <button class='deletar' onclick='deletar({$linha["id"]})'>Apagar</button>
-                    <button class='status' onclick=\"alterarStatus({$linha["id"]}, 'Pronto')\">Pronto</button>
-                    <button class='status' onclick=\"alterarStatus({$linha["id"]}, 'Em andamento')\">Em Andamento</button>
-                </td>
-            </tr>";
-        }
-        $conn->close();
-        ?>
-    </table>
+   <h2 style="margin-top: 60px;">Serviços Registrados</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Aparelho</th>
+      <th>Defeito</th>
+      <th>Tempo</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+    $resultado = $conn->query("SELECT * FROM ordemdeservico ORDER BY id DESC");
+    while ($linha = $resultado->fetch_assoc()) {
+      $json = htmlspecialchars(json_encode($linha), ENT_QUOTES, 'UTF-8');
+      echo "<tr>
+        <td data-label='ID'>{$linha["id"]}</td>
+        <td data-label='Nome'>{$linha["nome"]}</td>
+        <td data-label='Telefone'>{$linha["telefone"]}</td>
+        <td data-label='Aparelho'>{$linha["aparelho"]}</td>
+        <td data-label='Defeito'>{$linha["defeito"]}</td>
+        <td data-label='Tempo'>{$linha["tempo"]}</td>
+        <td data-label='Status'>{$linha["status"]}</td>
+        <td data-label='Ações'>
+          <button class='editar' onclick='editar($json)'>Editar</button>
+          <button class='deletar' onclick='deletar({$linha["id"]})'>Apagar</button>
+          <button class='status' onclick=\"alterarStatus({$linha["id"]}, 'Pronto')\">Pronto</button>
+          <button class='status' onclick=\"alterarStatus({$linha["id"]}, 'Em andamento')\">Em Andamento</button>
+        </td>
+      </tr>";
+    }
+    $conn->close();
+    ?>
+  </tbody>
+</table>
+
 
 </div>
 
 <script src="./acesso.js"></script>
 <script src="./editar.js"></script>
 <script src="../JS/logado.js"></script>
+<script src="../JS/javascript.js"></script>
 </body>
 </html>
