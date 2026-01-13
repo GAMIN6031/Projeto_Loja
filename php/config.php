@@ -3,7 +3,7 @@
 $server = 'localhost';
 $usuario = 'root';
 $banco = 'projeto_loja';
-$senha = '880317Vid@';
+$senha = '';
 
 $conn = new mysqli($server, $usuario, $senha, $banco);
 

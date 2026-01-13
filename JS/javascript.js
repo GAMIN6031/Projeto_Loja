@@ -255,21 +255,23 @@ document.addEventListener('DOMContentLoaded', () => {
       boxShadow: "none",
     }, "Avaliar");
     btnAvaliar.disabled = true;
-    btnAvaliar.onmouseenter = () => {
-      if (!btnAvaliar.disabled)
+    btnAvaliar.addEventListener('mouseenter', () => {
+      if (!btnAvaliar.disabled) {
         btnAvaliar.style.boxShadow = "0 0 10px #28a745cc";
-    };
-    btnAvaliar.onmouseleave = () => {
+      }
+    });
+    btnAvaliar.addEventListener('mouseleave', () => {
       btnAvaliar.style.boxShadow = "none";
-    };
-    btnAvaliar.onclick = () => {
+    });
+    btnAvaliar.addEventListener('click', () => {
       if (notaSelecionada === 0) return;
       setCookie("avaliou", "sim", 30);
       modal.style.opacity = 0;
       setTimeout(() => {
-        window.location.href = "https://www.exemplo.com/avaliar";
+        window.alert(`Obrigado por avaliar nosso serviço com ${notaSelecionada} estrela${notaSelecionada > 1 ? 's' : ''}!`);
+        document.body.removeChild(modal);
       }, 350);
-    };
+    });
 
     const btnNao = createElem("button", {
       backgroundColor: "#dc3545",

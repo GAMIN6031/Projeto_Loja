@@ -1,4 +1,4 @@
-// Toast flutuante
+//Mensagem flutuante
 function mostrarToast(mensagem, duracao = 4000) {
   const container = document.getElementById("toast-container");
   if (!container) return;
@@ -140,7 +140,7 @@ function enviarParaWhatsApp() {
   window.open(link, "_blank");
 }
 
-// Mostrar/Fechar sacola
+// Abrir/Fechar sacola  
 function toggleSacola() {
   const lista = document.getElementById("lista-sacola");
   if (!lista) return;

@@ -67,10 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <main>
-  <div style="background-color: #ffc107; color: #212529; padding: 16px; border-radius: 8px; font-family: sans-serif; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: 50px;">
-    <strong>🔐 Acesso restrito:</strong> Esta área de login é exclusiva para <span style="color: #c82333; font-weight: bold;">administradores</span>. Se você não tem autorização, por favor retorne à página principal.
-  </div>
-
   <div class="login-wrapper">
     <div class="login-box">
       <h2>Login</h2>
